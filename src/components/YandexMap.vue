@@ -14,15 +14,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 85vh; /* Occupies the full height of the viewport */
-  background-color: #f8f9fa;
+  width: 100vh;
+  height: 85vh;
+  background-color: #ffffff;
   overflow: hidden;
 }
 
 .map-iframe {
-  width: 75%; /* Adjust width as needed */
-  height: 80%; /* Adjust height as needed */
+  width: 75%;
+  height: 80%;
   border: none;
   overflow: hidden;
 }

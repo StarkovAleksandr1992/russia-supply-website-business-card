@@ -13,14 +13,10 @@ const options = reactive({
   menu: '#menu',
   navigation: true,
   anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
-  sectionsColor: ['#f8f9fa', '#f8f9fa', '#f8f9fa', '#f8f9fa', '#f8f9fa'],
+  sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'],
   afterLoad: (origin, destination, direction) => {
     toggleMenuButtons(destination);
-    toggleVisibility('taglines', destination.index, 0);
-    toggleVisibility('customers', destination.index, 2);
-    toggleVisibility('supply', destination.index, 3);
-    toggleVisibility('contacts', destination.index, 4);
-  },
+  }
 });
 
 function toggleMenuButtons(destination) {
@@ -34,21 +30,6 @@ function toggleMenuButtons(destination) {
   }
 }
 
-function toggleVisibility(containerId, destinationIndex, visibleIndex) {
-  const container = document.getElementById(containerId);
-  const items = container.querySelectorAll('.data');
-
-  items.forEach((item, index) => {
-    if (destinationIndex === visibleIndex) {
-      setTimeout(() => {
-        item.classList.add('visible');
-      }, index * 150);
-    } else {
-      item.classList.remove('visible');
-    }
-  });
-}
-
 const isMenuOpen = reactive({open: false});
 
 function toggleMenu() {
@@ -57,7 +38,7 @@ function toggleMenu() {
 </script>
 
 <template>
-  <div>
+    <div class="logo" id="logo">Снабжение России</div>
     <button class="menu-button" @click="toggleMenu">
       <span v-if="!isMenuOpen.open">☰</span>
       <span v-else>×</span>
@@ -87,40 +68,36 @@ function toggleMenu() {
         <Contacts/>
       </div>
     </full-page>
-  </div>
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-.taglines-container,
-.customers-container,
-.items-container,
-.contacts-container {
+.section {
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  display: block;
+  position: fixed;
+  top: 41px;
+  left: 64px;
+  width: 156px;
+  height: 64px;
+  text-align: center;
   font-family: 'Old Standard TT', serif;
-  word-break: break-word;
-
-
-  @media screen and (min-width: 1300px) {
-    font-size: 45px;
-  }
-  // Large desktops and laptops
-  @media screen and (min-width: 1200px) and (max-width: 1299px) {
-    font-size: 40px;
-  }
-
-  // Small smartphones
-  @media screen and (max-width: 575px) {
-    font-size: 20px;
-  }
+  font-size: 32px;
+  color: green;
+  z-index: 100;
 }
 
 #menu {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 46px;
+  right: 46px;
   z-index: 70;
   font-family: 'Old Standard TT', serif;
+  font-size: 16px;
   background-color: white;
   padding: 15px;
   border-radius: 5px;
@@ -139,7 +116,6 @@ function toggleMenu() {
   color: #333;
   padding: 5px 10px;
   border-radius: 3px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 #menu li a:hover {
@@ -147,14 +123,15 @@ function toggleMenu() {
 }
 
 #menu .active a {
-  color: #000;
-  font-weight: bold;
+  color: #ffffff;
+  background-color: #426B1F;
+;
 }
 
 .menu-button {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 46px;
+  right: 46px;
   z-index: 100;
   background: none;
   border: none;
@@ -167,11 +144,12 @@ function toggleMenu() {
   #menu {
     display: flex;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 46px;
+    right: 46px;
     background: none;
     padding: 0;
     box-shadow: none;
+    font-size: 16px;
   }
 
   #menu.open {
@@ -186,14 +164,5 @@ function toggleMenu() {
   .menu-button {
     display: none;
   }
-}
-
-.data {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.data.visible {
-  opacity: 1;
 }
 </style>
