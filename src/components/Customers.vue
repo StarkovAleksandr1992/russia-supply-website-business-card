@@ -38,10 +38,19 @@ const customers = computed(() => [
   font-size: 32px;
   text-align: left;
   color: #333;
-}
 
-.customer {
-  margin: 2% 0;
+  @media screen and (min-width: 1300px) {
+    font-size: 32px;
+  }
+  // Large desktops and laptops
+  @media screen and (min-width: 1200px) and (max-width: 1299px) {
+    font-size: 32px;
+  }
+
+  // Small smartphones
+  @media screen and (max-width: 575px) {
+    font-size: 10px;
+  }
 }
 
 .customer-link {

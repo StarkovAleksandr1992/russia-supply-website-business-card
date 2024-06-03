@@ -3,56 +3,50 @@
 import {computed} from "vue";
 
 const items = computed(() => [
-  {id: 1, value: 'КАРТРИДЖИ ДЛЯ ОРГТЕХНИКИ ОРИГИНАЛЬНЫЕ И СОВМЕСТИМЫЕ'},
-  {id: 2, value: 'ЗАПЧАСТИ ДЛЯ ОРГТЕХНИКИ ОРИГИНАЛЬНЫЕ И СОВМЕСТИМЫЕ'},
-  {id: 3, value: 'КОМПЬЮТЕРЫ, КОМПЛЕКТУЮЩИЕ, ПЕРИФЕРИЮ'},
-  {id: 4, value: 'ПРОМЫШЛЕННАЯ АВТОМАТИКА'},
-  {id: 5, value: 'СЕТЕВОЕ ОБОРУДОВАНИЕ'},
-  {id: 6, value: 'ТЕЛЕФОНИЯ'},
+  {id: 1, value: 'Картриджи для оргтехники оригинальные и совместимые'},
+  {id: 2, value: 'Запчасти для оргтехники оригинальные и совместимые'},
+  {id: 3, value: 'Компьютеры, комплектующие, периферию'},
+  {id: 4, value: 'Сетевое оборудование'},
+  {id: 5, value: 'Телефония'},
+  {id: 6, value: 'Пром. автоматика.'},
 ]);
 
 </script>
 
 <template>
   <div class="items-container data-container" id="supply">
-    <transition-group name="fade" tag="div">
+    Поставляем:
       <div
           class="item data"
           v-for="item in items"
           :key="item.id"
           ref="itemRefs"
-      >{{ item.value }}
+      >{{ item.id + '. ' + item.value }}
       </div>
-    </transition-group>
   </div>
 </template>
 
 <style scoped lang="scss">
 .items-container {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
-  padding: 10%;
+  font-family: 'Old Standard TT', serif;
+  font-size: 32px;
+  text-align: left;
   color: #333;
-  background-color: #f8f9fa;
-  overflow: hidden;
-}
 
-.item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  margin: 2% 0;
-
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
+  @media screen and (min-width: 1300px) {
+    font-size: 32px;
+  }
+  // Large desktops and laptops
+  @media screen and (min-width: 1200px) and (max-width: 1299px) {
+    font-size: 32px;
   }
 
-  &:hover {
-    transform: scale(1.05);
+  // Small smartphones
+  @media screen and (max-width: 575px) {
+    font-size: 10px;
   }
 }
 </style>

@@ -80,21 +80,40 @@ function toggleMenu() {
 #logo {
   display: block;
   position: fixed;
-  top: 41px;
-  left: 64px;
-  width: 156px;
-  height: 64px;
   text-align: center;
   font-family: 'Old Standard TT', serif;
   font-size: 32px;
-  color: green;
+  color: #426B1F;
   z-index: 100;
+
+  @media screen and (min-width: 1300px) {
+    font-size: 32px;
+    top: 41px;
+    left: 64px;
+    width: 156px;
+    height: 64px;
+  }
+  // Large desktops and laptops
+  @media screen and (min-width: 1200px) and (max-width: 1299px) {
+    font-size: 32px;
+    top: 41px;
+    left: 64px;
+    width: 156px;
+    height: 64px;
+  }
+
+  // Small smartphones
+  @media screen and (max-width: 575px) {
+    font-size: 10px;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 20px;
+  }
 }
 
 #menu {
   position: fixed;
-  top: 46px;
-  right: 46px;
   z-index: 70;
   font-family: 'Old Standard TT', serif;
   font-size: 16px;
@@ -104,6 +123,25 @@ function toggleMenu() {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: none;
   transition: display 1s ease-in-out;
+
+  @media screen and (min-width: 1300px) {
+    font-size: 32px;
+    top: 41px;
+    right: 64px;
+  }
+  // Large desktops and laptops
+  @media screen and (min-width: 1200px) and (max-width: 1299px) {
+    font-size: 32px;
+    top: 41px;
+    right: 64px;
+  }
+
+  // Small smartphones
+  @media screen and (max-width: 575px) {
+    font-size: 10px;
+    top: 10px;
+    right: 10px;
+  }
 }
 
 #menu.open {
@@ -138,6 +176,24 @@ function toggleMenu() {
   font-size: 24px;
   cursor: pointer;
   color: #4e5451;
+  @media screen and (min-width: 1300px) {
+    font-size: 32px;
+    top: 41px;
+    right: 64px;
+  }
+  // Large desktops and laptops
+  @media screen and (min-width: 1200px) and (max-width: 1299px) {
+    font-size: 32px;
+    top: 41px;
+    right: 64px;
+  }
+
+  // Small smartphones
+  @media screen and (max-width: 575px) {
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+  }
 }
 
 @media (min-width: 768px) {

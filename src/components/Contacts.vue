@@ -4,14 +4,13 @@ import {computed} from 'vue';
 const contacts = computed(() => [
   {id: 1, type: 'Почта', value: 'mail@russia.supply', link: 'mailto:mail@russia.supply'},
   {id: 2, type: 'Телефон', value: '8 (800) 22 22 450', link: 'tel:+78002222450'},
-  {id: 3, type: 'Telegram', value: 't.me/RussiaSupply', link: 'https://t.me/RussiaSupply'}
+  {id: 3, type: 'Телеграм', value: 't.me/RussiaSupply', link: 'https://t.me/RussiaSupply'}
 ]);
 
 </script>
 
 <template>
   <div class="contacts-container data-container" id="contacts">
-    <transition-group name="fade" tag="div">
       <div
           class="contact data"
           v-for="(contact, index) in contacts"
@@ -22,40 +21,37 @@ const contacts = computed(() => [
           {{ contact.type }}: {{ contact.value }}
         </a>
       </div>
-    </transition-group>
   </div>
 </template>
 
 <style scoped lang="scss">
 
 .contacts-container {
-  display: flex;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  padding: 10%;
+  display: block;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 400;
+  height: 100%;
+  width: 100%;
   color: #333;
-  background-color: #f8f9fa;
-  overflow: hidden;
-}
+  visibility: visible;
 
-.contact {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  margin: 2% 0;
-
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
+  @media screen and (min-width: 1300px) {
+    font-size: 64px;
+  }
+  // Large desktops and laptops
+  @media screen and (min-width: 1200px) and (max-width: 1299px) {
+    font-size: 64px;
   }
 
-  &:hover {
-    transform: scale(1.05);
+  // Small smartphones
+  @media screen and (max-width: 575px) {
+    font-size: 20px;
   }
 }
+
 .contact-link {
   text-decoration: none;
   color: inherit;
@@ -63,12 +59,5 @@ const contacts = computed(() => [
 
 .contact-link:hover {
   text-decoration: underline;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
 }
 </style>
