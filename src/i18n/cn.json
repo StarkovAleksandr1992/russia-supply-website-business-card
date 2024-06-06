@@ -1,0 +1,89 @@
+{
+  "title": "供应俄罗斯",
+  "header": {
+    "logo": {
+      "firstLine": "供应",
+      "secondLine": "俄罗斯"
+    },
+    "menu": {
+      "home": "首页",
+      "map": "供货地图",
+      "customers": "客户",
+      "supply": "供应产品",
+      "contacts": "联系方式"
+    }
+  },
+  "taglines": {
+    "1": "参与政府采购,",
+    "2": "提供设备,",
+    "3": "为俄罗斯提供服务."
+  },
+  "customers": {
+    "header": "客户:",
+    "list": [
+      {
+        "id": 1,
+        "name": "俄罗斯水电：萨彦-舒舍斯克水电站, 伏尔加水电站, ...及其他.",
+        "link": "https://rushydro.ru/company/"
+      },
+      {
+        "id": 2,
+        "name": "俄罗斯原子能: 科尔斯克核电站, 比利彬斯克核电站, \"格里纳托姆\"及其他.",
+        "link": "https://rosatom.ru/index.html"
+      },
+      {
+        "id": 3,
+        "name": "俄罗斯电网",
+        "link": "https://www.rosseti.ru/company/"
+      },
+      {
+        "id": 4,
+        "name": "俄罗斯铁路",
+        "link": "https://company.rzd.ru/"
+      },
+      {
+        "id": 5,
+        "name": "俄罗斯天然气银行",
+        "link": "https://www.gazprombank.ru/"
+      },
+      {
+        "id": 6,
+        "name": "俄罗斯海港",
+        "link": "https://www.rosmorport.ru/"
+      },
+      {
+        "id": 7,
+        "name": "医疗机构: 圣彼得堡第10儿童医院.",
+        "link": "http://pni10.ru/"
+      }
+    ]
+  },
+  "supply": {
+    "header": "供应产品:",
+    "items": {
+      "1": "原装和兼容办公设备墨盒",
+      "2": "原装和兼容办公设备零件",
+      "3": "计算机, 配件, 外设",
+      "4": "网络设备",
+      "5": "电话设备",
+      "6": "工业自动化"
+    }
+  },
+  "contacts": [
+    {
+      "type": "邮件:",
+      "value": "mail@russia.supply",
+      "link" : "mailto:mail@russia.supply"
+    },
+    {
+      "type": "电话:",
+      "value": "8 (800) 22 22 450",
+      "link" : "tel:+78002222450"
+    },
+    {
+      "type": "电报:",
+      "value": "t.me/RussiaSupply",
+      "link" : "https://t.me/RussiaSupply"
+    }
+  ]
+}

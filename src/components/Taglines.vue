@@ -1,23 +1,15 @@
 <script setup>
-import {computed} from 'vue';
-
-const taglines = computed(() => [
-  {id: 1, value: 'Участвуем в гос. закупках,'},
-  {id: 2, value: 'Поставляем оборудование,'},
-  {id: 3, value: 'Снабжаем Россию.'}
-]);
-
 </script>
 
 <template>
   <div class="taglines-container data-container" id="taglines">
-      <div
-          class="tagline data"
-          v-for="tagline in taglines"
-          key="tagline.id"
-      >
-        {{ tagline.value }}
-      </div>
+    <div
+        class="tagline data"
+        v-for="(value, key) in $tm('taglines')"
+        :key="key"
+    >
+      {{ value }}
+    </div>
   </div>
 </template>
 
@@ -30,22 +22,17 @@ const taglines = computed(() => [
   text-align: center;
   font-family: 'Old Standard TT', serif;
   font-weight: 400;
+  font-size: 4rem;
   height: 100%;
   width: 100%;
   color: #333;
   visibility: visible;
 
-  @media screen and (min-width: 1300px) {
-    font-size: 64px;
+  @media screen and (max-width: 600px) and (orientation: portrait) {
+    font-size: 1.3rem;
   }
-  // Large desktops and laptops
-  @media screen and (min-width: 1200px) and (max-width: 1299px) {
-    font-size: 64px;
-  }
-
-  // Small smartphones
-  @media screen and (max-width: 575px) {
-    font-size: 20px;
+  @media screen and (max-height: 600px) and (orientation: landscape) {
+    font-size: 2rem;
   }
 }
 

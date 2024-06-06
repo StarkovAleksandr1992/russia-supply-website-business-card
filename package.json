@@ -11,10 +11,12 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "bootstrap": "5.3.3",
+    "flag-icons": "^7.2.3",
+    "i18next-browser-languagedetector": "^8.0.0",
     "sass": "^1.77.4",
     "vue": "^3.4.21",
     "vue-fullpage.js": "^0.2.17",
-    "vue-router": "^4.3.2"
+    "vue-i18n": "^9.13.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

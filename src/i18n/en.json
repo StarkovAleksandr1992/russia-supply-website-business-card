@@ -1,0 +1,90 @@
+{
+  "title": "Russia supply",
+  "header": {
+    "logo": {
+      "firstLine": "Russia",
+      "secondLine": "Supply"
+    },
+    "menu": {
+      "home": "Home",
+      "map": "Supply map",
+      "customers": "Customers",
+      "supply": "Supply",
+      "contacts": "Contacts"
+    }
+  },
+  "taglines": {
+    "1": "We participate in public procurement,",
+    "2": "supplying equipment,",
+    "3": "supplying Russia."
+  },
+  "customers": {
+    "header": "Customers:",
+    "list": [
+      {
+        "id": 1,
+        "name": "RusHydro: Sayano-Shushenskaya, Votkinskaya, ... and others.",
+        "link": "https://rushydro.ru/company/"
+      },
+      {
+        "id": 2,
+        "name": "Rosatom: Kola, Bilibino NPP, 'Greenatom' and others.",
+        "link": "https://rosatom.ru/index.html"
+      },
+      {
+        "id": 3,
+        "name": "Rosseti",
+        "link": "https://www.rosseti.ru/company/"
+      },
+      {
+        "id": 4,
+        "name": "RZD",
+        "link": "https://company.rzd.ru/"
+      },
+      {
+        "id": 5,
+        "name": "Gazprombank",
+        "link": "https://www.gazprombank.ru/"
+      },
+      {
+        "id": 6,
+        "name": "Rosmorport",
+        "link": "https://www.rosmorport.ru/"
+      },
+      {
+        "id": 7,
+        "name": "Medical institutions: PNI No. 10 Saint Petersburg",
+        "link": "http://pni10.ru/"
+      }
+    ]
+  },
+  "supply": {
+    "header": "Supply:",
+    "items": {
+      "1": "Original and compatible office equipment cartridges",
+      "2": "Parts for office equipment original and compatible",
+      "3": "Computers, components, peripherals",
+      "4": "Networking equipment",
+      "5": "Telephony",
+      "6": "Industrial Automation"
+    }
+  },
+  "contacts": [
+    {
+      "type": "E-mail:",
+      "value": "mail@russia.supply",
+      "link" : "mailto:mail@russia.supply"
+    },
+    {
+      "type": "Phone number:",
+      "value": "8 (800) 22 22 450",
+      "link" : "tel:+78002222450"
+    },
+    {
+      "type": "Telegram:",
+      "value": "t.me/RussiaSupply",
+      "link" : "https://t.me/RussiaSupply"
+    }
+  ]
+}
+

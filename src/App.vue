@@ -5,6 +5,8 @@ import Supply from "@/components/Supply.vue";
 import Contacts from "@/components/Contacts.vue";
 import YandexMap from "@/components/YandexMap.vue";
 import Customers from "@/components/Customers.vue";
+import Header from "@/components/Header.vue";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 const options = reactive({
   licenseKey: 'gplv3-license',
@@ -14,43 +16,13 @@ const options = reactive({
   navigation: true,
   anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
   sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'],
-  afterLoad: (origin, destination, direction) => {
-    toggleMenuButtons(destination);
-  }
 });
 
-function toggleMenuButtons(destination) {
-  const activeLink = document.querySelector('#menu .active');
-  if (activeLink) {
-    activeLink.classList.remove('active');
-  }
-  const newActiveLink = document.querySelector(`#menu [data-menuanchor="${destination.anchor}"]`);
-  if (newActiveLink) {
-    newActiveLink.classList.add('active');
-  }
-}
-
-const isMenuOpen = reactive({open: false});
-
-function toggleMenu() {
-  isMenuOpen.open = !isMenuOpen.open;
-}
 </script>
 
 <template>
-    <div class="logo" id="logo">Снабжение России</div>
-    <button class="menu-button" @click="toggleMenu">
-      <span v-if="!isMenuOpen.open">☰</span>
-      <span v-else>×</span>
-    </button>
-    <ul :class="{ open: isMenuOpen.open }" id="menu">
-      <li data-menuanchor="page1" class="active"><a href="#page1" @click="toggleMenu">Главная</a></li>
-      <li data-menuanchor="page2"><a href="#page2" @click="toggleMenu">Карта поставок</a></li>
-      <li data-menuanchor="page3"><a href="#page3" @click="toggleMenu">Заказчики</a></li>
-      <li data-menuanchor="page4"><a href="#page4" @click="toggleMenu">Поставляем</a></li>
-      <li data-menuanchor="page5"><a href="#page5" @click="toggleMenu">Контакты</a></li>
-    </ul>
-
+  <div class="container">
+    <Header/>
     <full-page :options="options" id="fullpage" ref="fullpage">
       <div class="section">
         <Taglines/>
@@ -68,157 +40,61 @@ function toggleMenu() {
         <Contacts/>
       </div>
     </full-page>
+  </div>
 </template>
 
 <style lang="scss">
 
-.section {
-  justify-content: center;
+@font-face {
+  font-family: 'Old Standard TT';
+  src: local('Old Standard TT Regular'),
+  local('OldStandardTT-Regular'),
+  url('../src/assets/fonts/oldstandardttregular.ttf') format('woff2'),
+  url('../src/assets/fonts/oldstandardttregular.woff') format('woff'),
+  url('../src/assets/fonts/oldstandardttregular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Old Standard TT';
+  src: local('Old Standard TT Italic'),
+  local('OldStandardTT-Italic'),
+  url('../src/assets/fonts/oldstandardttitalic.woff2') format('woff2'),
+  url('../src/assets/fonts/oldstandardttitalic.woff') format('woff'),
+  url('../src/assets/fonts/oldstandardttitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Old Standard TT';
+  src: local('Old Standard TT Bold'),
+  local('OldStandardTT-Bold'),
+  url('../src/assets/fonts/oldstandardttbold.woff2') format('woff2'),
+  url('../src/assets/fonts/oldstandardttbold.woff') format('woff'),
+  url('../src/assets/fonts/oldstandardttbold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Old Standard TT', serif;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-#logo {
-  display: block;
-  position: fixed;
-  text-align: center;
-  font-family: 'Old Standard TT', serif;
-  font-size: 32px;
-  color: #426B1F;
-  z-index: 100;
-
-  @media screen and (min-width: 1300px) {
-    font-size: 32px;
-    top: 41px;
-    left: 64px;
-    width: 156px;
-    height: 64px;
-  }
-  // Large desktops and laptops
-  @media screen and (min-width: 1200px) and (max-width: 1299px) {
-    font-size: 32px;
-    top: 41px;
-    left: 64px;
-    width: 156px;
-    height: 64px;
-  }
-
-  // Small smartphones
-  @media screen and (max-width: 575px) {
-    font-size: 10px;
-    top: 10px;
-    left: 10px;
-    width: 50px;
-    height: 20px;
-  }
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-#menu {
-  position: fixed;
-  z-index: 70;
-  font-family: 'Old Standard TT', serif;
-  font-size: 16px;
-  background-color: white;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  display: none;
-  transition: display 1s ease-in-out;
 
-  @media screen and (min-width: 1300px) {
-    font-size: 32px;
-    top: 41px;
-    right: 64px;
-  }
-  // Large desktops and laptops
-  @media screen and (min-width: 1200px) and (max-width: 1299px) {
-    font-size: 32px;
-    top: 41px;
-    right: 64px;
-  }
-
-  // Small smartphones
-  @media screen and (max-width: 575px) {
-    font-size: 10px;
-    top: 10px;
-    right: 10px;
-  }
-}
-
-#menu.open {
-  display: block;
-  list-style-type: none
-}
-
-#menu li a {
-  text-decoration: none;
-  color: #333;
-  padding: 5px 10px;
-  border-radius: 3px;
-}
-
-#menu li a:hover {
-  background-color: #f0f0f0;
-}
-
-#menu .active a {
-  color: #ffffff;
-  background-color: #426B1F;
-;
-}
-
-.menu-button {
-  position: fixed;
-  top: 46px;
-  right: 46px;
-  z-index: 100;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #4e5451;
-  @media screen and (min-width: 1300px) {
-    font-size: 32px;
-    top: 41px;
-    right: 64px;
-  }
-  // Large desktops and laptops
-  @media screen and (min-width: 1200px) and (max-width: 1299px) {
-    font-size: 32px;
-    top: 41px;
-    right: 64px;
-  }
-
-  // Small smartphones
-  @media screen and (max-width: 575px) {
-    font-size: 20px;
-    top: 10px;
-    right: 10px;
-  }
-}
-
-@media (min-width: 768px) {
-  #menu {
-    display: flex;
-    position: fixed;
-    top: 46px;
-    right: 46px;
-    background: none;
-    padding: 0;
-    box-shadow: none;
-    font-size: 16px;
-  }
-
-  #menu.open {
-    display: flex;
-  }
-
-  #menu li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
-  .menu-button {
-    display: none;
-  }
-}
 </style>

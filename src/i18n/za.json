@@ -1,0 +1,89 @@
+{
+  "title": "Toevoer na Rusland",
+  "header": {
+    "logo": {
+      "firstLine": "Toevoer",
+      "secondLine": "na Rusland"
+    },
+    "menu": {
+      "home": "Tuis",
+      "map": "Verskaffingskaart",
+      "customers": "Kliënte",
+      "supply": "Verskaf",
+      "contacts": "Kontakte"
+    }
+  },
+  "taglines": {
+    "1": "Neem deel aan staatsaankope,",
+    "2": "verskaf toerusting,",
+    "3": "voorsien Rusland."
+  },
+  "customers": {
+    "header": "Kliënte:",
+    "list": [
+      {
+        "id": 1,
+        "name": "Rus-Hydro: Sayano-Shushenskaya, Votkinskaya, ... en ander.",
+        "link": "https://rushydro.ru/company/"
+      },
+      {
+        "id": 2,
+        "name": "Rosatom: Kolskaya, Bilibinskaya Kernkragstasie, \"Greenatom\" en ander.",
+        "link": "https://rosatom.ru/index.html"
+      },
+      {
+        "id": 3,
+        "name": "Rosseti",
+        "link": "https://www.rosseti.ru/company/"
+      },
+      {
+        "id": 4,
+        "name": "RZhD",
+        "link": "https://company.rzd.ru/"
+      },
+      {
+        "id": 5,
+        "name": "Gazprombank",
+        "link": "https://www.gazprombank.ru/"
+      },
+      {
+        "id": 6,
+        "name": "Rosmorport",
+        "link": "https://www.rosmorport.ru/"
+      },
+      {
+        "id": 7,
+        "name": "Mediese instellings: PNI № 10 Sint-Petersburg.",
+        "link": "http://pni10.ru/"
+      }
+    ]
+  },
+  "supply": {
+    "header": "Verskaf:",
+    "items": {
+      "1": "Originele en kompatibele inktpatrone vir kantoortoerusting",
+      "2": "Originele en kompatibele onderdele vir kantoortoerusting",
+      "3": "Rekenaars, komponente, randtoestelle",
+      "4": "Netwerktoerusting",
+      "5": "Telefonie",
+      "6": "Industriële outomatisering"
+    }
+  },
+  "contacts": [
+    {
+      "type": "E-pos:",
+      "value": "mail@russia.supply",
+      "link" : "mailto:mail@russia.supply"
+    },
+    {
+      "type": "Telefoon:",
+      "value": "8 (800) 22 22 450",
+      "link" : "tel:+78002222450"
+    },
+    {
+      "type": "Telegram:",
+      "value": "t.me/RussiaSupply",
+      "link" : "https://t.me/RussiaSupply"
+    }
+  ]
+}

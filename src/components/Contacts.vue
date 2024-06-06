@@ -1,26 +1,13 @@
 <script setup>
-import {computed} from 'vue';
-
-const contacts = computed(() => [
-  {id: 1, type: 'Почта', value: 'mail@russia.supply', link: 'mailto:mail@russia.supply'},
-  {id: 2, type: 'Телефон', value: '8 (800) 22 22 450', link: 'tel:+78002222450'},
-  {id: 3, type: 'Телеграм', value: 't.me/RussiaSupply', link: 'https://t.me/RussiaSupply'}
-]);
-
 </script>
 
 <template>
   <div class="contacts-container data-container" id="contacts">
-      <div
-          class="contact data"
-          v-for="(contact, index) in contacts"
-          :key="contact.id"
-          ref="elementRefs"
-      >
-        <a :href="contact.link" target="_blank" class="contact-link">
-          {{ contact.type }}: {{ contact.value }}
-        </a>
-      </div>
+    <div class="contact data" v-for="contact in $tm('contacts')">
+      <a :href="contact.link" target="_blank" class="contact-link">
+        {{ contact.type }} {{ contact.value }}
+      </a>
+    </div>
   </div>
 </template>
 
@@ -32,23 +19,18 @@ const contacts = computed(() => [
   align-items: center;
   text-align: center;
   font-family: 'Old Standard TT', serif;
+  font-size: 4rem;
   font-weight: 400;
   height: 100%;
   width: 100%;
   color: #333;
   visibility: visible;
 
-  @media screen and (min-width: 1300px) {
-    font-size: 64px;
+  @media screen and (max-width: 600px) and (orientation: portrait) {
+    font-size: 1.3rem;
   }
-  // Large desktops and laptops
-  @media screen and (min-width: 1200px) and (max-width: 1299px) {
-    font-size: 64px;
-  }
-
-  // Small smartphones
-  @media screen and (max-width: 575px) {
-    font-size: 20px;
+  @media screen and (max-height: 600px) and (orientation: landscape) {
+    font-size: 2rem;
   }
 }
 
