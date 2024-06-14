@@ -1,12 +1,12 @@
 <script setup>
-import {reactive} from 'vue';
+import {reactive, watch} from 'vue';
 import Taglines from "@/components/Taglines.vue";
 import Supply from "@/components/Supply.vue";
 import Contacts from "@/components/Contacts.vue";
 import YandexMap from "@/components/YandexMap.vue";
 import Customers from "@/components/Customers.vue";
 import Header from "@/components/Header.vue";
-import LanguageDetector from "i18next-browser-languagedetector";
+import {useI18n} from "vue-i18n";
 
 const options = reactive({
   licenseKey: 'gplv3-license',
@@ -17,7 +17,18 @@ const options = reactive({
   anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
   sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'],
 });
+const { t, locale } = useI18n();
 
+// Функция для установки заголовка
+const setTitle = () => {
+  document.title = t('title');
+};
+
+// Следим за изменением локали
+watch(locale, setTitle);
+
+// Устанавливаем начальный заголовок
+setTitle();
 </script>
 
 <template>

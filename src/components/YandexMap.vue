@@ -26,25 +26,33 @@ const mapSrc = computed(() => {
 
 <style scoped lang="scss">
 .map-container {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
   background-color: #ffffff;
   overflow: hidden;
+
+  @media screen and (max-width: 600px) and (orientation: portrait) {
+    height: 90vh;
+    width: 100vw;
+  }
 }
 
 .map-iframe {
+  margin-top: 4.5rem;
   border: none;
-  width: 80%;
+  width: 75%;
   height: 75%;
 
   @media screen and (max-width: 600px) and (orientation: portrait) {
+    margin-top: 0;
     width: 80%;
     height: 75%;
   }
   @media screen and (max-height: 600px) and (orientation: landscape) {
+    margin-top: 1.5rem;
     width: 80%;
     height: 65%;
   }

@@ -19,7 +19,7 @@
   align-items: center;
   text-align: center;
   font-family: 'Old Standard TT', serif;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 400;
   height: 100%;
   width: 100%;

@@ -22,9 +22,9 @@
   text-align: center;
   font-family: 'Old Standard TT', serif;
   font-weight: 400;
-  font-size: 4rem;
+  font-size: 3rem;
   height: 100%;
-  width: 100%;
+  width: 80vw;
   color: #333;
   visibility: visible;
 
